@@ -49,7 +49,7 @@ class OrderItem(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     payment_method = models.CharField(max_length=80, null=True, blank=True)
-    taxPrice = models.IntegerField(default=0)
+    tax_price = models.IntegerField(default=0)
     total_price = models.IntegerField(default=0)
     is_paid = models.BooleanField(default=False)
     paid_at = models.DateTimeField(auto_now_add=False, null=True, blank=True)
@@ -66,7 +66,6 @@ class ShippingAddress(models.Model):
     order = models.OneToOneField(Order, on_delete=models.CASCADE, null=True, blank=True)
     address = models.CharField(max_length=80, null=True, blank=True)
     city = models.CharField(max_length=80, null=True, blank=True)
-    zip_code = models.CharField(max_length=80, null=True, blank=True)
     zip_code = models.CharField(max_length=80, null=True, blank=True)
     _id = models.AutoField(primary_key=True, editable=False)
 

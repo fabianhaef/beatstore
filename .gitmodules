@@ -1,0 +1,3 @@
+[submodule "beatstore-frontend"]
+	path = beatstore-frontend
+	url = https://github.com/fabianhaef/beatstore-frontend.git
