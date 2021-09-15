@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Product, User, Order, OrderItem, ShippingAddress, LicenceVariation
+from .models import Product, User, Order, OrderItem, ShippingAddress
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -39,15 +39,11 @@ class UserSerializerWithToken(UserSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    licence_variation = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Product
         fields = '__all__'
 
-    def get_licence_variation(self, obj):
-        serializer = LicenceVariationSerializer(obj.licence_variation, many=False)
-        return serializer.data
 
 
 class ShippingAddressSerializer(serializers.ModelSerializer):
@@ -86,10 +82,4 @@ class OrderSerializer(serializers.ModelSerializer):
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
-        fields = '__all__'
-
-
-class LicenceVariationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = LicenceVariation
         fields = '__all__'

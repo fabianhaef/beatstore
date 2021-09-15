@@ -24,8 +24,8 @@ def addOrderItems(request):
         order = Order.objects.create(
             user=user,
             payment_method=data['payment_method'],
-            tax_price=10,  # data['tax_price'],
-            total_price=10  # data['total_price']
+            taxPrice=data['tax_price'],
+            totalPrice=data['total_price']
         )
 
         shippingAddress = ShippingAddress.objects.create(
@@ -51,6 +51,15 @@ def addOrderItems(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
+def getMyOrders(request):
+    user = request.user
+    orders = user.order_set.all()
+    serializer = OrderSerializer(orders, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getOrderById(request, pk):
     user = request.user
     try:
@@ -69,8 +78,8 @@ def getOrderById(request, pk):
 def updateOrderToPaid(request, pk):
     order = Order.objects.get(_id=pk)
 
-    order.isPaid = True
-    order.paidAt = datetime.now()
+    order.is_paid = True
+    order.paid_at = datetime.now()
     order.save()
 
     return Response('Order was paid')
