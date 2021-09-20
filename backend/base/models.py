@@ -12,9 +12,8 @@ class Product(models.Model):
     is_soundkit = models.BooleanField(default=False)
     _id = models.AutoField(primary_key=True, editable=False)
     price = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', default='/images/placeholder.png')
     file = models.FileField(upload_to='files/')
-    #trackout_files = models.FileField(upload_to='trackouts/')
 
     def __str__(self):
         return self.title
