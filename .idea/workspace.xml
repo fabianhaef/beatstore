@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="305203d1-cba1-4650-887c-5a79097a5642" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beatstore-frontend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/base/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/base/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/base/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/base/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/base/urls/order_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/base/urls/order_urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/base/views/order_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/base/views/order_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/base/views/product_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/base/views/product_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend" beforeDir="false" afterPath="$PROJECT_DIR$/frontend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CheckoutSteps.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CheckoutSteps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/constants/cartConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/constants/cartConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/reducers/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reducers/cartReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/actions/productActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/actions/productActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/reducers/productsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reducers/productsReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +41,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabia\Documents\Projekte\Beatstore\backend\static\products\images" />
+      <recent name="C:\Users\fabia\Documents\Projekte\Beatstore\backend\static\images" />
+      <recent name="C:\Users\fabia\Documents\Projekte\Beatstore\backend\static" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -66,13 +66,17 @@
       <screen x="0" y="0" width="1620" height="1040" />
     </state>
     <state x="555" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1620.1040/632.-1080.1920.1040@0.0.1620.1040" timestamp="1631548378703" />
+    <state x="464" y="114" key="CommitChangelistDialog2" timestamp="1631549352877">
+      <screen x="0" y="0" width="1620" height="1040" />
+    </state>
+    <state x="464" y="114" key="CommitChangelistDialog2/0.0.1620.1040/632.-1080.1920.1040@0.0.1620.1040" timestamp="1631549352877" />
     <state x="618" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1631547810209">
       <screen x="0" y="0" width="1620" height="1040" />
     </state>
     <state x="618" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1620.1040/632.-1080.1920.1040@0.0.1620.1040" timestamp="1631547810209" />
-    <state x="473" y="226" width="670" height="58" key="search.everywhere.popup" timestamp="1626991323542">
+    <state x="474" y="227" width="672" height="160" key="search.everywhere.popup" timestamp="1631737021956">
       <screen x="0" y="0" width="1620" height="1040" />
     </state>
-    <state x="473" y="226" width="670" height="58" key="search.everywhere.popup/0.0.1620.1040/632.-1080.1920.1040@0.0.1620.1040" timestamp="1626991323542" />
+    <state x="474" y="227" width="672" height="160" key="search.everywhere.popup/0.0.1620.1040/632.-1080.1920.1040@0.0.1620.1040" timestamp="1631737021956" />
   </component>
 </project>
