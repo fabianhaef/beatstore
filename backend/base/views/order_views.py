@@ -12,12 +12,11 @@ from datetime import datetime
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-def addOrderItems(request):
+def add_order_items(request):
     user = request.user
     data = request.data
     orderItems = data['orderItems']
 
-    print(data)
     if orderItems and len(orderItems) == 0:
         return Response({'detail': 'No Order Items'}, status=status.HTTP_400_BAD_REQUEST)
     else:
@@ -33,7 +32,6 @@ def addOrderItems(request):
             address=data['shipping_address']['address'],
             zip_code=data['shipping_address']['postalCode'],
             city=data['shipping_address']['address']
-            # country=data['shipping_address']['country']
         )
 
         for i in orderItems:
@@ -43,15 +41,18 @@ def addOrderItems(request):
                 product=product,
                 order=order,
                 name=product.title,
-                price=10,  # product.price,
+                price=product.price,
+                image=product.image.url,
             )
+
+            product.save()
         serializer = OrderSerializer(order, many=False)
         return Response(serializer.data)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def getMyOrders(request):
+def get_my_orders(request):
     user = request.user
     orders = user.order_set.all()
     serializer = OrderSerializer(orders, many=True)
@@ -60,7 +61,7 @@ def getMyOrders(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def getOrderById(request, pk):
+def get_order_by_id(request, pk):
     user = request.user
     try:
         order = Order.objects.get(_id=pk)
@@ -75,7 +76,7 @@ def getOrderById(request, pk):
 
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-def updateOrderToPaid(request, pk):
+def update_order_to_paid(request, pk):
     order = Order.objects.get(_id=pk)
 
     order.is_paid = True
@@ -87,7 +88,7 @@ def updateOrderToPaid(request, pk):
 
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
-def getOrders(request):
+def get_orders(request):
     orders = Order.objects.all()
     serializer = OrderSerializer(orders, many=True)
     return Response(serializer.data)

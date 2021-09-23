@@ -11,12 +11,12 @@ from base.serializers import ProductSerializer
 @api_view(['GET'])
 def get_products(request):
     query = request.query_params.get('keyword')
-    if query == None:
+    if query is None:
         query = ''
-    products = Product.objects.filter(title__icontains=query)
+    products = Product.objects.filter(title__icontains=query).order_by('-created')
 
     page = request.query_params.get('page')
-    paginator = Paginator(products, 3)
+    paginator = Paginator(products, 5)
 
     try:
         products = paginator.page(page)
@@ -25,7 +25,7 @@ def get_products(request):
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
 
-    if page == None:
+    if page is None:
         page = 1
 
     page = int(page)
@@ -48,7 +48,7 @@ def create_product(request):
     product = Product.objects.create(
         user=user,
         title='Sample Name',
-        price=10,
+        price=0,
         description="Hello, World",
         is_soundkit=False,
     )
@@ -63,7 +63,6 @@ def update_product(request, pk):
     data = request.data
     product = Product.objects.get(_id=pk)
 
-    print(data)
     product.title = data['title']
     product.price = data['price']
     product.description = data['description']
