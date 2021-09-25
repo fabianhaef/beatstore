@@ -15,6 +15,9 @@ class Product(models.Model):
     image = models.ImageField(upload_to='images/', default='/images/placeholder.png')
     file = models.FileField(upload_to='files/')
 
+    def get_file(self):
+        return self.file
+
     def __str__(self):
         return self.title
 

@@ -66,6 +66,14 @@ class OrderSerializer(serializers.ModelSerializer):
         serializer = OrderItemSerializer(items, many=True)
         return serializer.data
 
+    def get_file(self, obj):
+        try:
+            file = obj.file
+        except:
+            file = None
+        serializer = OrderItemSerializer(file, many=True)
+        return serializer.data
+
     def get_shipping_address(self, obj):
         try:
             address = ShippingAddressSerializer(obj.shipping_address, many=False).data

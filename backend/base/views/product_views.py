@@ -16,7 +16,7 @@ def get_products(request):
     products = Product.objects.filter(title__icontains=query).order_by('-created')
 
     page = request.query_params.get('page')
-    paginator = Paginator(products, 5)
+    paginator = Paginator(products, 10)
 
     try:
         products = paginator.page(page)
