@@ -42,7 +42,7 @@ def add_order_items(request):
                 order=order,
                 name=product.title,
                 price=product.price,
-                image=product.image.url,
+                #image=product.image.url,
             )
 
             product.save()
